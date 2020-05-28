@@ -11,31 +11,52 @@ Uwaga: program jest prosty, wiem, że mało ciekawy. Ale on ma być poligonem do
 Kod źródłowy (najlepiej kompletny projekt bez plików binarnych) rozwiązania proszę przesyłać w archiwum zip, 7z lub rar.
 */
 
-import AllSorts.*;
-import Strategy.*;
+import AllSorts.BogoSort;
+import Automatization.AutoTest;
+import Strategy.Array;
+import Strategy.ArraySorter;
+
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Array x = new Array(1000);
+        Scanner s = new Scanner(System.in);
 
+        AutoTest at1 = new AutoTest(96);     //kilkadziesiat elementow
+        AutoTest at2 = new AutoTest(420);    //kilkaset elementow
+        AutoTest at3 = new AutoTest(2137);    //kilka tysiecy elementow
+        AutoTest at4 = new AutoTest(71830);    //kilkadziesiat tysiecy elementow
+        at1.startTesting();
+        at2.startTesting();
+        at3.startTesting();
+        at4.startTesting();
+        System.out.println("Skonczono sortowanie");
+        System.out.println("Press Enter key to continue...");
+        try
+        {
+            System.in.read();
+        }
+        catch(Exception e)
+        {}
+
+        at1.showTimeMean();
+        at2.showTimeMean();
+        at3.showTimeMean();
+        at4.showTimeMean();
+        System.out.println();
+        System.out.println("Dla żartu, mozemy jeszcze sprobowac BogoSortu dla 10 elementow :) Wcisnij Enter...");
+        try
+        {
+            System.in.read();
+        }
+        catch(Exception e)
+        {}
+        //<bogosort>
+        Array x = new Array(10);
         ArraySorter as = new ArraySorter();
-
-        as.setSort(new SelectionSort());
+        as.setSort(new BogoSort());
         as.sortArray(x);
-        as.setSort(new BubbleSort());
-        as.sortArray(x);
-        as.setSort(new InsertionSort());
-        as.sortArray(x);
-        as.setSort(new HeapSort());
-        as.sortArray(x);
-        as.setSort(new QuickSort());
-        as.sortArray(x);
-        as.setSort(new MergeSort());
-        as.sortArray(x);
-        as.setSort(new ParallelQuickSort());
-        as.sortArray(x);
-        as.setSort(new ShellSort());
-        as.sortArray(x);
-
-    }
+        //</bogosort>
+        }
 }

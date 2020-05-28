@@ -5,7 +5,7 @@ import java.util.Arrays;
 //A skoro ma też rozrzucenie sortowania na wątki, to czemu tego nie użyc?
 public class ParallelQuickSort extends TimeMeasure implements SortStrategy {
     @Override
-    public void Sort(Array array) {
+    public long Sort(Array array) {
         Start();
         Integer[] arr = array.getArray();
 
@@ -13,11 +13,12 @@ public class ParallelQuickSort extends TimeMeasure implements SortStrategy {
 
         Stop();
         System.out.println();
-        System.out.println("QuickSort:");
+        System.out.println("ParallelQuickSort:");
         array.setSortedArray(arr);
         array.showArray();
         array.showSortedArray();
         Measure();
+        return getMeasurement();
     }
 
 }

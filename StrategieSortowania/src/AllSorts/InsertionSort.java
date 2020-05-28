@@ -2,7 +2,7 @@ package AllSorts;
 import Strategy.*;
 public class InsertionSort extends TimeMeasure implements SortStrategy {
     @Override
-    public void Sort(Array array) {
+    public long Sort(Array array) {
         Start();
         Integer[] arr = array.getArray();
         for (int i = 1; i < arr.length; i++)
@@ -21,5 +21,6 @@ public class InsertionSort extends TimeMeasure implements SortStrategy {
         array.showArray();
         array.showSortedArray();
         Measure();
+        return getMeasurement();
     }
 }

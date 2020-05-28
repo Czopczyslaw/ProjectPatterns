@@ -3,7 +3,7 @@ import Strategy.*;
 public class MergeSort extends TimeMeasure implements SortStrategy {
         static Integer[] arr = null;
     @Override
-    public void Sort(Array array) {
+    public long Sort(Array array) {
         Start();
         arr = array.getArray();
         mergeSort(0,arr.length-1); //tu jest wykonywany kod sortowania
@@ -14,6 +14,7 @@ public class MergeSort extends TimeMeasure implements SortStrategy {
         array.showArray();
         array.showSortedArray();
         Measure();
+        return getMeasurement();
     }
     public static void mergeSort(int start,int end)
     {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 //Skoro java ma wbudowany Quicksort, to po co go pisac kolejny raz? :)
 public class QuickSort extends TimeMeasure implements SortStrategy {
     @Override
-    public void Sort(Array array) {
+    public long Sort(Array array) {
         Start();
         Integer[] arr = array.getArray();
 
@@ -17,6 +17,7 @@ public class QuickSort extends TimeMeasure implements SortStrategy {
         array.showArray();
         array.showSortedArray();
         Measure();
+        return getMeasurement();
     }
 
 }

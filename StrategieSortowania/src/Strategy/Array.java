@@ -4,7 +4,7 @@ public class Array {
     private Integer[] array;
     private Integer[] sortedArray;
 
-    public Array(int i) {
+    public Array(int i) {   //konstruktor ktory wypelnia losowymi liczbami od 1 do 1000
         array = new Integer[i];
         for (int x = 0; x < i; x++) {
 

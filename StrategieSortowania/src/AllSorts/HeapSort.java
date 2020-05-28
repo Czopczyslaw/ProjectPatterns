@@ -2,7 +2,7 @@ package AllSorts;
 import Strategy.*;
 public class HeapSort extends TimeMeasure implements SortStrategy {
     @Override
-    public void Sort(Array array) {
+    public long Sort(Array array) {
         Start();
         Integer[] arr = array.getArray();
         buildheap(arr);
@@ -19,6 +19,7 @@ public class HeapSort extends TimeMeasure implements SortStrategy {
         array.showArray();
         array.showSortedArray();
         Measure();
+        return getMeasurement();
     }
     public static void buildheap(Integer []arr) {
 
